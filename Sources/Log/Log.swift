@@ -9,7 +9,7 @@
 import Foundation
 
 fileprivate let _fileManager = FileManager()
-public var LogDirectoryName = "Logs"
+public var LogDirectoryName = "GlanceCam Logs"
 
 public struct Logging {
     
@@ -37,7 +37,7 @@ public struct Logging {
     
     public static func defaultLogsDirectoryURL() -> URL? {
         do {
-            let dir = try _fileManager.url(for: .applicationSupportDirectory, in: .userDomainMask, appropriateFor: nil, create: true)
+            let dir = try _fileManager.url(for: .downloadsDirectory, in: .userDomainMask, appropriateFor: nil, create: true)
             var dirURL = dir.appendingPathComponent(LogDirectoryName)
             
             // Create directory if needed
